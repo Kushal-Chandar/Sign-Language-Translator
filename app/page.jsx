@@ -29,15 +29,21 @@ function App() {
       <div className="flex flex-row justify-center lg:text-7xl text-5xl m-5">
         <button
           className="shadow-2xl bg-neutral-800 hover:bg-neutral-900 rounded-lg"
-          onClick={() => setGestureInfo("Hello: Hold a steady hand.")}
+          onClick={() => setGestureInfo("Yes: Make a fist.")}
         >
-          👋
+          👊
         </button>
         <button
           className="shadow-2xl bg-neutral-800 hover:bg-neutral-900 rounded-lg"
           onClick={() => setGestureInfo("I Love You")}
         >
           🤟
+        </button>
+        <button
+          className="shadow-2xl bg-neutral-800 hover:bg-neutral-900 rounded-lg"
+          onClick={() => setGestureInfo("Hello: Hold a steady hand.")}
+        >
+          👋
         </button>
         <button
           className="shadow-2xl bg-neutral-800 hover:bg-neutral-900 rounded-lg"
@@ -48,15 +54,11 @@ function App() {
           🤏
         </button>
         <button
-          className="shadow-2xl bg-neutral-800 hover:bg-neutral-900 rounded-lg"
-          onClick={() => setGestureInfo("Yes: Make a fist.")}
-        >
-          👊
-        </button>
-        <button
           className="shadow-2xl bg-neutral-800 hover:bg-neutral-900 rounded-lg flex flex-row"
           onClick={() =>
-            setGestureInfo("Thank You: Hold Both hands close to your chin.")
+            setGestureInfo(
+              "Thank You: Hold Both hands close to your chin. Palms facing towards you."
+            )
           }
         >
           <div className="-mr-2">🤚</div>
@@ -87,7 +89,7 @@ function App() {
           <button
             className="rounded my-5 mx-auto border bg-neutral-200 text-neutral-800 p-1"
             onClick={() => {
-              window.location.reload();
+              setCamera(true);
             }}
           >
             Please allow permission to camera

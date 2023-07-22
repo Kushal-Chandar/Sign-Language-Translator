@@ -6,7 +6,7 @@ import Webcam from "react-webcam";
 
 const labelMap = {
   1: { name: "Hello", color: "red" },
-  2: { name: "Yes", color: "blue" },
+  2: { name: "Yes", color: "lightblue" },
   3: { name: "No", color: "purple" },
   4: { name: "Thank You", color: "yellow" },
   5: { name: "I Love You", color: "lime" },
@@ -35,13 +35,13 @@ export const drawRect = (
         x * imgWidth,
         y * imgHeight,
         (width * imgWidth) / 2,
-        (height * imgHeight) / 1.5
+        (height * imgHeight) / 2
       );
       ctx.stroke();
       ctx.scale(-1, 1);
       ctx.fillText(
         labelMap[text]["name"] + " - " + Math.round(scores[i] * 100) / 100,
-        -(x * imgWidth) - (width * imgHeight) / 1.5,
+        -(x * imgWidth) - (width * imgHeight) / 2,
         y * imgHeight - 10
       );
       ctx.setTransform(1, 0, 0, 1, 0, 0);
@@ -80,7 +80,7 @@ function RealtimeDetection() {
       canvasRef.current.height = videoHeight;
 
       const img = tf.browser.fromPixels(video);
-      const resized = tf.image.resizeBilinear(img, [640, 480]);
+      const resized = tf.image.resizeBilinear(img, [320, 320]);
       const casted = resized.cast("int32");
       const expanded = casted.expandDims(0);
       const obj = await net.executeAsync(expanded);
@@ -96,7 +96,7 @@ function RealtimeDetection() {
           boxes[0],
           classes[0],
           scores[0],
-          0.8,
+          0.85,
           videoWidth,
           videoHeight,
           ctx
@@ -111,15 +111,19 @@ function RealtimeDetection() {
     }
   };
   return (
-    <div className="max-w-[640px] max-h-[480px] w-full h-full my-10 scale-x-[-1]">
+    <div className="lg:max-w-lg max-w-md w-full aspect-square my-5 scale-x-[-1]">
       <Webcam
-        className="absolute border rounded-lg mx-auto left-0 right-0 z-10 h-fit w-full"
+        className="absolute border rounded-lg m-0 left-0 right-0 z-10 w-full h-full"
         ref={webcamRef}
-        alt="Camera is Disabled"
+        alt="RTC"
+        videoConstraints={{
+          facingMode: "user",
+          aspectRatio: 1,
+        }}
       />
       <canvas
         ref={canvasRef}
-        className="relative border rounded-lg mx-auto left-0 right-0 z-20 h-fit w-full"
+        className="absolute border rounded-lg  m-0 left-0 right-0 z-20 w-full h-full"
       />
     </div>
   );

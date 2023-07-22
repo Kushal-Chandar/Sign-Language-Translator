@@ -14,7 +14,7 @@ An app that translates sign language gestures to text in real time. This is my f
 
 **Deployed to vercel at** <https://slt-kushal-chandar.vercel.app/>.
 
-![APPIMAGE](/media/app_image.png)
+![APPIMAGE](/media/app.png)
 
 ## DEMO
 
