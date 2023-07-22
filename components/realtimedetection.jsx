@@ -111,11 +111,10 @@ function RealtimeDetection() {
     }
   };
   return (
-    <div className="max-w-[640px] max-h-[480px] w-full h-fit my-10 scale-x-[-1]">
+    <div className="max-w-[640px] max-h-[480px] w-full h-full my-10 scale-x-[-1]">
       <Webcam
         className="absolute border rounded-lg mx-auto left-0 right-0 z-10 h-fit w-full"
         ref={webcamRef}
-        muted={true}
         alt="Camera is Disabled"
       />
       <canvas

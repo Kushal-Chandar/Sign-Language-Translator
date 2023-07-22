@@ -28,19 +28,19 @@ function App() {
       </p>
       <div className="flex flex-row justify-center lg:text-7xl text-5xl m-5">
         <button
-          className="shadow-2xl hover:bg-neutral-900 rounded-lg"
+          className="shadow-2xl bg-neutral-800 hover:bg-neutral-900 rounded-lg"
           onClick={() => setGestureInfo("Hello: Hold a steady hand.")}
         >
           👋
         </button>
         <button
-          className="shadow-2xl hover:bg-neutral-900 rounded-lg"
+          className="shadow-2xl bg-neutral-800 hover:bg-neutral-900 rounded-lg"
           onClick={() => setGestureInfo("I Love You")}
         >
           🤟
         </button>
         <button
-          className="shadow-2xl hover:bg-neutral-900 rounded-lg"
+          className="shadow-2xl bg-neutral-800 hover:bg-neutral-900 rounded-lg"
           onClick={() =>
             setGestureInfo("No: Pinch your hand but leave a little gap.")
           }
@@ -48,13 +48,13 @@ function App() {
           🤏
         </button>
         <button
-          className="shadow-2xl hover:bg-neutral-900 rounded-lg"
+          className="shadow-2xl bg-neutral-800 hover:bg-neutral-900 rounded-lg"
           onClick={() => setGestureInfo("Yes: Make a fist.")}
         >
           👊
         </button>
         <button
-          className="shadow-2xl hover:bg-neutral-900 rounded-lg flex flex-row"
+          className="shadow-2xl bg-neutral-800 hover:bg-neutral-900 rounded-lg flex flex-row"
           onClick={() =>
             setGestureInfo("Thank You: Hold Both hands close to your chin.")
           }
@@ -74,11 +74,11 @@ function App() {
           >
             <p>
               Depending on your internet connection and your computer
-              specifications, it might take a while to load the modal.
+              specifications, the demo might be slow.
             </p>
             <p>
-              If the demo is too slow you can try enabling hardware acceleration
-              on browser.
+              Try enabling hardware acceleration on browser or installing to
+              your device (PWA).
             </p>
             <p className="text-xs hover:text-neutral-400">*Touch to close*</p>
           </button>
