@@ -17,7 +17,7 @@ function App() {
         setCamera(false);
       }
     });
-  }, []);
+  });
 
   return (
     <div className="text-center">
